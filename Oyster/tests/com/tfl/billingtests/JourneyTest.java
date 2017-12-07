@@ -20,9 +20,10 @@ public class JourneyTest {
     UUID JourneyStartReaderId = UUID.randomUUID();
     UUID JourneyEndCardId = UUID.randomUUID();
     UUID JourneyEndReaderId = UUID.randomUUID();
+    ClockInterface testClock = new Clock();
 
-    JourneyStart ExJourneyStart = new JourneyStart(JourneyStartCardId, JourneyStartReaderId);
-    JourneyEnd ExJourneyEnd = new JourneyEnd(JourneyEndCardId, JourneyEndReaderId);
+    JourneyStart ExJourneyStart = new JourneyStart(JourneyStartCardId, JourneyStartReaderId,testClock);
+    JourneyEnd ExJourneyEnd = new JourneyEnd(JourneyEndCardId, JourneyEndReaderId, testClock);
     Journey ExJourney = new Journey(ExJourneyStart, ExJourneyEnd);
 
     @Test

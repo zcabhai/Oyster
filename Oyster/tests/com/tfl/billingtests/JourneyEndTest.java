@@ -1,5 +1,7 @@
 package com.tfl.billingtests;
 
+import com.tfl.billing.Clock;
+import com.tfl.billing.ClockInterface;
 import com.tfl.billing.JourneyEnd;
 import org.junit.Test;
 import java.util.UUID;
@@ -10,7 +12,9 @@ public class JourneyEndTest {
 
     UUID cardID = UUID.randomUUID();
     UUID readerID = UUID.randomUUID();
-    JourneyEnd TestJourneyEnd = new JourneyEnd(cardID, readerID);
+    ClockInterface testClock = new Clock();
+
+    JourneyEnd TestJourneyEnd = new JourneyEnd(cardID, readerID, testClock);
 
     @Test
     public void MatchCardIdTest()

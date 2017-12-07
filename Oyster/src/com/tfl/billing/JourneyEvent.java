@@ -14,6 +14,13 @@ public abstract class JourneyEvent{
         this.time = System.currentTimeMillis();
     }
 
+    // different constructor for new implementation
+    public JourneyEvent(UUID cardId, UUID readerId, ClockInterface SystemClock) {
+        this.cardId = cardId;
+        this.readerId = readerId;
+        this.time = SystemClock.getCurrentTime();
+    }
+
     public UUID cardId() {
         return cardId;
     }
